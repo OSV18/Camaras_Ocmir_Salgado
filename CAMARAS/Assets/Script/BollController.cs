@@ -25,7 +25,7 @@ public class BollController : MonoBehaviour
         lifeBoll -= Time.deltaTime;
         if (lifeBoll > 0)
         {
-            MoveBoll(Vector3.right);
+            MoveBoll(Vector3.back);
         }
         
         else

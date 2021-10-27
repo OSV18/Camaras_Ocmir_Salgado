@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CannonControl : MonoBehaviour
 {
-    public Vector3 SpawnBoll = new Vector3(0,0,0);
+    //public Vector3 SpawnBoll = new Vector3(-0.2f,2.2f,0f);
     public GameObject Ammunation;
-    //public GameObject Spawn;
+    public GameObject Spawn;
     public float Cooldown = 3f;
     //public float timefire = 0;
     public bool isShoot = true;
@@ -23,7 +24,7 @@ public class CannonControl : MonoBehaviour
         if (isShoot)
         {
             isShoot = true;
-            Instantiate(Ammunation, SpawnBoll, Ammunation.transform.rotation);
+            Instantiate(Ammunation, Spawn, Ammunation.transform.rotation);
         }
 
         if(isShoot)
@@ -35,7 +36,12 @@ public class CannonControl : MonoBehaviour
          
     }
 
-        private void cooldown()
+    private void Instantiate(GameObject Ammunation, GameObject Spawn, Quaternion rotation)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void cooldown()
     {
         isShoot = true;
     }
