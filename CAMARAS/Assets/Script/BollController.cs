@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BollController : MonoBehaviour
 {
-    public float SpeedBoll = 1.0F;
+    [SerializeField] float SpeedBoll = 1.0F;
     float DamageBoll = 2.0F;
-    public float lifeBoll = 5f;
-
+    [SerializeField] float lifeBoll = 5f;
+    
 // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class BollController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Scale();
         }
@@ -25,7 +25,7 @@ public class BollController : MonoBehaviour
         lifeBoll -= Time.deltaTime;
         if (lifeBoll > 0)
         {
-            MoveBoll(Vector3.back);
+            MoveBoll(Vector3.forward);
         }
         
         else
